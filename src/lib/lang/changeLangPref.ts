@@ -22,5 +22,5 @@ export default async function changeLangPref(qrCodeId: string) {
     },
   })
 
-  return true
+  return preferredLanguage
 }

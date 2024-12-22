@@ -12,8 +12,9 @@ import CookieErrorUI from "./CookieErrorUI";
 export default function ChangeLangButton({ qrCodeId, width }: { qrCodeId: string, width: boolean }) {
 
   async function changeLang() {
-    const isChangeLangSuccess = await changeLangPref(qrCodeId)
+    const preferredLanguage = await changeLangPref(qrCodeId)
     document.cookie = "langPref=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = `langPref=${preferredLanguage}; path=/;`;
     window.location.reload();
   }
 
